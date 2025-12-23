@@ -1,5 +1,5 @@
 {
-    "name": "moataz/schema-object-manager",
+    "name": "moataz27/schema-object-manager",
     "description": "Manage database views, procedures, functions and triggers without migrations",
     "type": "library",
     "license": "MIT",
