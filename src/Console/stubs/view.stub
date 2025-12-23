@@ -1,0 +1,20 @@
+<?php
+
+namespace {{ namespace }};
+
+use Moataz\SchemaObjectManager\Objects\View;
+
+class {{ class }} extends View
+{
+    public function name(): string
+    {
+        return '{{ name }}';
+    }
+
+    public function definition(): string
+    {
+        return <<<'SQL'
+        CREATE VIEW {{ name }} AS SELECT 1;
+        SQL;
+    }
+}

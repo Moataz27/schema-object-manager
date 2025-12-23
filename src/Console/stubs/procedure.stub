@@ -1,0 +1,25 @@
+<?php
+
+namespace {{ namespace }};
+
+use Moataz\SchemaObjectManager\Objects\Procedure;
+
+class {{ class }} extends Procedure
+{
+    public function name(): string
+    {
+        return '{{ name }}';
+    }
+
+    public function definition(): string
+    {
+        return <<<'SQL'
+            CREATE PROCEDURE IF NOT EXISTS `{{ name }}`(
+                -- parameters
+            )
+            BEGIN
+                -- body
+            END
+        SQL;
+    }
+}

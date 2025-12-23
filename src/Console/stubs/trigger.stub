@@ -1,0 +1,26 @@
+<?php
+
+namespace {{ namespace }};
+
+use Moataz\SchemaObjectManager\Objects\Trigger;
+
+class {{ class }} extends Trigger
+{
+    public function name(): string
+    {
+        return '{{ name }}';
+    }
+
+    public function definition(): string
+    {
+        return <<<'SQL'
+            CREATE TRIGGER {{ name }}
+            AFTER INSERT ON 
+            -- table
+            FOR EACH ROW
+            BEGIN
+                -- body
+            END
+        SQL;
+    }
+}

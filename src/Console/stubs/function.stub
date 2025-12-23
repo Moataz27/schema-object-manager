@@ -1,0 +1,26 @@
+<?php
+
+namespace {{ namespace }};
+
+use Moataz\SchemaObjectManager\Objects\Functionality;
+
+class {{ class }} extends Functionality
+{
+    public function name(): string
+    {
+        return '{{ name }}';
+    }
+
+    public function definition(): string
+    {
+        return <<<'SQL'
+            CREATE FUNCTION {{ name }} (
+                -- parameters
+            ) RETURNS -- type
+            DETERMINISTIC
+            BEGIN
+                -- body
+            END;
+        SQL;
+    }
+}
