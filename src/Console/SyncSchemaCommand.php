@@ -14,7 +14,7 @@ class SyncSchemaCommand extends Command
 
     public function handle(SchemaManager $manager)
     {
-        if ($this->option('force') && App::isProduction()) {
+        if (!$this->option('force') && App::isProduction()) {
             $this->warn('Warning: Syncing schema objects in production is not recommended! Use --force to override.');
             return Command::FAILURE;
         }

@@ -13,8 +13,8 @@ class SchemaObjectFinder
 {
     public function discover(): array
     {
-        if ($this->useCache() && Cache::has($this->cacheKey())) {
-            return array_map(fn($class) => App::make($class), array_filter(Cache::get($this->cacheKey()), fn($class) => class_exists($class)));
+        if ($this->useCache() && $cached = Cache::get($this->cacheKey())) {
+            return array_map(fn($class) => App::make($class), array_filter($cached, fn($class) => class_exists($class)));
         }
 
         $classes = [];
